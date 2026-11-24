@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juan Santos Leal | Sistemas de Informação</title>
+<meta name="description" content="Portfólio de Juan Santos Leal, estudante de Sistemas de Informação na UVV, em Vila Velha - ES. Desenvolvimento web, Python, Java, bancos de dados, Linux e automação. Em busca de estágio em TI.">
+<meta name="theme-color" content="#F6F7F9">
+<link rel="icon" href="foto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --ink: #0B1220;
+    --muted: #556070;
+    --line: #E3E7ED;
+    --accent: #1D4ED8;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E8EEFD;
+    --ok: #16A34A;
+    --font: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --r: 16px;
+    --max: 1100px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0A0F1A; --surface: #121A29; --ink: #EDF1F7; --muted: #9AA7BA; --line: #223048;
+      --accent: #6C93FF; --accent-ink: #0A0F1A; --accent-soft: #17254A; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0A0F1A; --surface: #121A29; --ink: #EDF1F7; --muted: #9AA7BA; --line: #223048;
+    --accent: #6C93FF; --accent-ink: #0A0F1A; --accent-soft: #17254A; color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 1rem; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img, svg { max-width: 100%; }
+  a { color: inherit; }
+  p { margin: 0 0 1rem; }
+  h1, h2, h3 { margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
+  .ico { width: 1.15em; height: 1.15em; flex: none; }
+  .skip { position: absolute; left: -999px; top: .5rem; background: var(--accent); color: var(--accent-ink); padding: .5rem 1rem; border-radius: 8px; z-index: 100; }
+  .skip:focus { left: .75rem; }
+
+  /* Cabeçalho */
+  .top { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 4rem; gap: 1rem; }
+  .brand { font-weight: 800; text-decoration: none; letter-spacing: -0.02em; font-size: 1.1rem; }
+  .brand span { color: var(--accent); }
+  .nav { display: flex; align-items: center; gap: .25rem; }
+  .nav a.link { text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; padding: .5rem .75rem; border-radius: 999px; }
+  .nav a.link:hover { color: var(--ink); background: var(--accent-soft); }
+  .tools { display: flex; align-items: center; gap: .5rem; }
+  .icon-btn { display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+  .icon-btn:hover { border-color: var(--accent); }
+  .menu-btn { display: none; }
+  @media (max-width: 860px) {
+    .menu-btn { display: inline-grid; }
+    .nav { position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; background: var(--surface); border-bottom: 1px solid var(--line); padding: .5rem 1rem 1rem; display: none; }
+    .nav.open { display: flex; }
+    .nav a.link { padding: .85rem .5rem; border-radius: 8px; font-size: 1.05rem; }
+  }
+
+  /* Hero */
+  .hero { padding: clamp(2.5rem, 7vw, 6rem) 0 clamp(2.5rem, 6vw, 5rem); }
+  .hero-grid { display: grid; gap: 2.5rem; align-items: center; grid-template-columns: 1fr; }
+  @media (min-width: 860px) { .hero-grid { grid-template-columns: 1.25fr .75fr; gap: 4rem; } }
+  .portrait { order: -1; justify-self: start; width: clamp(150px, 42vw, 190px); }
+  @media (min-width: 860px) { .portrait { order: 2; justify-self: end; width: min(100%, 340px); } }
+  .portrait .frame { aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #8c8c91; box-shadow: 0 0 0 5px var(--surface), 0 0 0 6px var(--line), 0 24px 48px -20px rgba(11,18,32,.35); }
+  .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); }
+  .badge { display: inline-flex; align-items: center; gap: .55rem; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: .4rem .9rem; font-size: .9rem; font-weight: 600; margin-bottom: 1.25rem; }
+  .badge i { width: .6rem; height: .6rem; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent); }
+  .hero h1 { font-size: clamp(2.4rem, 7.5vw, 4.6rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; }
+  .hero .lead { margin: 1.25rem 0 0; font-size: clamp(1.05rem, 2.2vw, 1.25rem); color: var(--muted); max-width: 36rem; line-height: 1.6; }
+  .hero .lead strong { color: var(--ink); font-weight: 600; }
+  .cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; padding: .8rem 1.35rem; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink); transition: border-color .2s, transform .2s; }
+  .btn:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .facts { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: 2rem 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .95rem; }
+  .facts li { display: flex; align-items: center; gap: .5rem; }
+  @media (max-width: 520px) { .cta .btn { flex: 1 1 100%; } }
+
+  /* Seções */
+  section.block { padding: clamp(2.75rem, 6vw, 5rem) 0; }
+  .head { margin-bottom: 2rem; max-width: 40rem; }
+  .head h2 { font-size: clamp(1.8rem, 4.5vw, 2.5rem); font-weight: 800; }
+  .head p { color: var(--muted); margin: .75rem 0 0; font-size: 1.05rem; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1.5rem; }
+  .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .6rem; }
+
+  .about { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+  @media (min-width: 860px) { .about { grid-template-columns: 1.4fr 1fr; } }
+  .about p { color: var(--muted); }
+  .about p:last-child { margin: 0; }
+  .about p strong { color: var(--ink); font-weight: 600; }
+  .stat-list { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+  .stat-list li { display: flex; flex-direction: column; }
+  .stat-list b { font-size: 1.05rem; }
+  .stat-list span { color: var(--muted); font-size: .95rem; }
+
+  .skills { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+  .chips li { background: var(--accent-soft); color: var(--accent); border-radius: 8px; padding: .3rem .75rem; font-size: .92rem; font-weight: 600; }
+  .chips.soft li { background: transparent; border: 1px solid var(--line); color: var(--muted); font-weight: 500; }
+
+  .repos { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+  .repo { display: flex; flex-direction: column; text-decoration: none; transition: border-color .2s, transform .2s; }
+  .repo:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .repo h3 { word-break: break-word; text-transform: capitalize; }
+  .repo p { color: var(--muted); font-size: .96rem; flex: 1; margin-bottom: 1rem; }
+  .repo .meta { display: flex; align-items: center; gap: .5rem; font-size: .88rem; font-weight: 600; color: var(--accent); }
+  .skeleton { min-height: 9rem; background: linear-gradient(90deg, var(--surface) 25%, var(--accent-soft) 50%, var(--surface) 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite linear; }
+  @keyframes shimmer { to { background-position: -200% 0; } }
+  .more { margin-top: 1.5rem; }
+
+  .timeline { position: relative; padding-left: 1.75rem; }
+  .timeline::before { content: ""; position: absolute; left: .45rem; top: .4rem; bottom: .4rem; width: 2px; background: var(--line); }
+  .timeline .item { position: relative; }
+  .timeline .item::before { content: ""; position: absolute; left: -1.75rem; top: .45rem; width: .95rem; height: .95rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--bg); }
+  .item h3 { margin: 0; font-size: 1.2rem; }
+  .item .org { color: var(--muted); margin: .25rem 0 .25rem; }
+  .item .when { display: inline-block; font-size: .85rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: .15rem .6rem; border-radius: 6px; margin-bottom: .9rem; }
+  .item ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+  .item li { margin-bottom: .45rem; }
+  .item + .item { margin-top: 2rem; }
+
+  .two { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 860px) { .two { grid-template-columns: 1fr 1fr; } }
+  .courses { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); margin-top: 1rem; }
+  .courses .card h3 { font-size: 1.02rem; }
+  .courses p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .courses .tag { display: inline-block; font-size: .8rem; font-weight: 600; color: var(--accent); margin-bottom: .5rem; }
+  .langs { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+  .langs li { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: .5rem; }
+  .langs li:last-child { border: 0; padding: 0; }
+  .langs span { color: var(--muted); }
+
+  .contact { padding: clamp(2.75rem, 6vw, 5rem) 0; }
+  .contact-card { background: var(--ink); color: var(--bg); border-radius: 24px; padding: clamp(1.75rem, 5vw, 3.5rem); }
+  .contact-card h2 { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 800; max-width: 20ch; }
+  .contact-card p { margin: 1rem 0 0; max-width: 40rem; opacity: .8; font-size: 1.05rem; }
+  .links { display: grid; gap: .75rem; margin-top: 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
+  .links a { display: flex; align-items: center; gap: .75rem; padding: .9rem 1.1rem; border-radius: 12px; text-decoration: none; font-weight: 600; border: 1px solid color-mix(in srgb, var(--bg) 25%, transparent); color: var(--bg); overflow-wrap: anywhere; }
+  .links a:hover { background: color-mix(in srgb, var(--bg) 12%, transparent); }
+  .links a.main { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+  @media (max-width: 480px) { .contact-card { padding: 1.5rem 1.25rem; } .links a { font-size: .9rem; padding: .85rem .85rem; gap: .6rem; overflow-wrap: normal; } }
+  footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .repo { transition: none; }
+    .btn:hover, .repo:hover { transform: none; }
+    .skeleton { animation: none; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.92Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11.5V16c3 2.5 9 2.5 12 0v-4.5"/></g></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 20h16"/></g></symbol>
+  <symbol id="i-theme" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path fill="currentColor" d="M12 3a9 9 0 0 1 0 18Z"/></g></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+</svg>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Juan<span>.</span>dev</a>
+    <div class="tools">
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a class="link" href="#sobre">Sobre</a>
+        <a class="link" href="#habilidades">Habilidades</a>
+        <a class="link" href="#projetos">Projetos</a>
+        <a class="link" href="#experiencia">Experiência</a>
+        <a class="link" href="#formacao">Formação</a>
+        <a class="link" href="#contato">Contato</a>
+      </nav>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Alternar tema claro e escuro"><svg class="ico"><use href="#i-theme"/></svg></button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="portrait">
+        <div class="frame"><img src="foto.jpg" alt="Retrato de Juan Santos Leal, de camisa e blazer pretos, sobre fundo cinza" width="640" height="640" fetchpriority="high"></div>
+      </div>
+      <div>
+        <span class="badge"><i></i>Disponível para estágio em TI</span>
+        <h1>Juan Santos Leal</h1>
+        <p class="lead">Estudante de <strong>Sistemas de Informação</strong> que gosta de transformar ideias em interfaces e código que funcionam. Em busca de um estágio em Tecnologia da Informação, aberto a outras oportunidades na área.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contato"><svg class="ico"><use href="#i-mail"/></svg>Entrar em contato</a>
+          <a class="btn" href="curriculo.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Baixar currículo</a>
+        </div>
+        <ul class="facts">
+          <li><svg class="ico"><use href="#i-pin"/></svg>Vila Velha, ES</li>
+          <li><svg class="ico"><use href="#i-cap"/></svg>UVV, 4º período</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="sobre">
+    <div class="wrap">
+      <div class="head"><h2>Sobre mim</h2></div>
+      <div class="about">
+        <div class="card">
+          <p>Cursando o 4º período de Sistemas de Informação na Universidade Vila Velha, tenho interesse em criar software que funcione bem e seja agradável de usar. Gosto de ir da ideia no <strong>Figma</strong> até o código no navegador.</p>
+          <p>Ainda não escolhi uma área única dentro da TI, e isso é proposital: quero aprender com projetos reais e descobrir onde posso contribuir mais. Também uso ferramentas como <strong>n8n, v0 e Cursor</strong> para prototipar e automatizar.</p>
+          <p>Antes da faculdade, fui Menor Aprendiz na área de embalagem do Salesiano de Vitória. Ali aprendi a cumprir horários e prazos, atender clientes e trabalhar em equipe, e levo isso para tudo o que faço.</p>
+        </div>
+        <div class="card">
+          <ul class="stat-list">
+            <li><b>Sistemas de Informação</b><span>Universidade Vila Velha, 4º período</span></li>
+            <li><b>Foco atual</b><span>Estágio em Tecnologia da Informação</span></li>
+            <li><b>Localização</b><span>Vila Velha, Espírito Santo</span></li>
+            <li><b>Idiomas</b><span>Português nativo, inglês básico</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="habilidades">
+    <div class="wrap">
+      <div class="head"><h2>Habilidades</h2><p>As tecnologias e ferramentas que uso, e o que levo comigo para o trabalho em equipe.</p></div>
+      <div class="skills">
+        <div class="card"><h3>Web e design</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>Figma</li></ul></div>
+        <div class="card"><h3>Programação</h3><ul class="chips"><li>Python</li><li>Java</li></ul></div>
+        <div class="card"><h3>Bancos de dados</h3><ul class="chips"><li>MySQL</li><li>PostgreSQL</li></ul></div>
+        <div class="card"><h3>Ferramentas</h3><ul class="chips"><li>Linux</li><li>Git</li><li>GitHub</li></ul></div>
+        <div class="card"><h3>IA e automação</h3><ul class="chips"><li>n8n</li><li>v0</li><li>Cursor</li></ul></div>
+        <div class="card"><h3>Escritório (básico)</h3><ul class="chips soft"><li>Excel</li><li>Word</li><li>PowerPoint</li></ul></div>
+        <div class="card" style="grid-column: 1 / -1"><h3>Habilidades pessoais</h3><ul class="chips soft"><li>Comunicação</li><li>Facilidade em aprender</li><li>Trabalho em equipe</li><li>Adaptabilidade</li><li>Criatividade</li><li>Proatividade</li><li>Organização</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projetos">
+    <div class="wrap">
+      <div class="head"><h2>Projetos</h2><p>Repositórios públicos do meu GitHub, atualizados automaticamente.</p></div>
+      <div class="repos" id="repos" aria-live="polite">
+        <div class="card skeleton" aria-hidden="true"></div>
+        <div class="card skeleton" aria-hidden="true"></div>
+        <div class="card skeleton" aria-hidden="true"></div>
+      </div>
+      <div class="more"><a class="btn" href="https://github.com/Juann651" target="_blank" rel="noopener"><svg class="ico"><use href="#i-github"/></svg>Ver todos no GitHub</a></div>
+    </div>
+  </section>
+
+  <section class="block" id="experiencia">
+    <div class="wrap">
+      <div class="head"><h2>Experiência</h2></div>
+      <div class="timeline">
+        <article class="item">
+          <h3>Menor Aprendiz, Embalador</h3>
+          <p class="org">Salesiano de Vitória (Programa Menor Aprendiz), Perim, Itapoã, Vila Velha - ES</p>
+          <span class="when">09/2023 a 02/2025</span>
+          <ul>
+            <li>Atuei na área de embalagem, desenvolvendo responsabilidade com horários e cumprimento de prazos.</li>
+            <li>Realizei atendimento e comunicação direta com clientes, aprimorando minha comunicação com o público.</li>
+            <li>Colaborei diariamente em equipe no ambiente operacional, fortalecendo a capacidade de adaptação.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="formacao">
+    <div class="wrap">
+      <div class="head"><h2>Formação e cursos</h2></div>
+      <div class="two">
+        <div class="card"><h3>Bacharelado em Sistemas de Informação</h3><p style="margin:0;color:var(--muted)">Universidade Vila Velha (UVV), cursando o 4º período.</p></div>
+        <div class="card"><h3>Idiomas</h3><ul class="langs"><li>Português <span>Nativo</span></li><li>Inglês <span>Básico</span></li></ul></div>
+      </div>
+      <div class="courses">
+        <article class="card"><span class="tag">Presencial, com certificado</span><h3>Administração</h3><p>Octa Treinamentos. Planejamento, organização, processos administrativos, gestão de pessoas e rotinas das empresas.</p></article>
+        <article class="card"><span class="tag">Online, com certificado</span><h3>Excel 2019 Básico</h3><p>Octa Treinamentos. Planilhas, fórmulas básicas, funções simples, gráficos e organização de dados.</p></article>
+        <article class="card"><span class="tag">Online, com certificado</span><h3>Inglês Básico</h3><p>Octa Treinamentos. Vocabulário essencial, gramática básica, leitura de textos simples e conversação inicial.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <div class="contact-card">
+        <h2>Vamos conversar sobre uma oportunidade?</h2>
+        <p>Meu objetivo principal é um estágio em Tecnologia da Informação, mas estou aberto a outras oportunidades. Escreva, ligue ou me encontre nas redes.</p>
+        <div class="links">
+          <a class="main" href="mailto:juansantosleal651@gmail.com"><svg class="ico"><use href="#i-mail"/></svg>juansantosleal651@gmail.com</a>
+          <a href="tel:+5527981194605"><svg class="ico"><use href="#i-phone"/></svg>(27) 98119-4605</a>
+          <a href="https://www.linkedin.com/in/juansantosleal" target="_blank" rel="noopener"><svg class="ico"><use href="#i-in"/></svg>LinkedIn</a>
+          <a href="https://github.com/Juann651" target="_blank" rel="noopener"><svg class="ico"><use href="#i-github"/></svg>GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="ano">2026</span> Juan Santos Leal</span><span>Vila Velha, ES</span></div></footer>
+
+<script>
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
+  // Tema claro/escuro
+  (function () {
+    var root = document.documentElement, btn = document.getElementById("themeBtn");
+    try { var s = localStorage.getItem("tema"); if (s) root.setAttribute("data-theme", s); } catch (e) {}
+    btn.addEventListener("click", function () {
+      var dark = root.getAttribute("data-theme") === "dark" ||
+        (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+      var next = dark ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("tema", next); } catch (e) {}
+    });
+  })();
+
+  // Menu no celular
+  (function () {
+    var btn = document.getElementById("menuBtn"), nav = document.getElementById("nav");
+    function set(open) { nav.classList.toggle("open", open); btn.setAttribute("aria-expanded", open); }
+    btn.addEventListener("click", function () { set(!nav.classList.contains("open")); });
+    nav.addEventListener("click", function (e) { if (e.target.tagName === "A") set(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+  })();
+
+  // Projetos do GitHub
+  (function () {
+    var USER = "Juann651", box = document.getElementById("repos");
+    function note(msg) { box.innerHTML = ""; var p = document.createElement("p"); p.style.color = "var(--muted)"; p.textContent = msg; box.appendChild(p); }
+    fetch("https://api.github.com/users/" + USER + "/repos?sort=updated&per_page=100")
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function (repos) {
+        var skip = [USER.toLowerCase(), USER.toLowerCase() + ".github.io", "portifolio-do-juan"];
+        var list = repos.filter(function (r) { return !r.fork && skip.indexOf(r.name.toLowerCase()) === -1; });
+        if (!list.length) { note("Os projetos aparecem aqui assim que eu publicar os primeiros repositórios."); return; }
+        box.innerHTML = "";
+        list.forEach(function (r) {
+          var a = document.createElement("a");
+          a.className = "card repo"; a.href = r.html_url; a.target = "_blank"; a.rel = "noopener";
+          var h = document.createElement("h3"); h.textContent = r.name.replace(/[-_]/g, " ");
+          var p = document.createElement("p"); p.textContent = r.description || "Abra o repositório para ver o código.";
+          var m = document.createElement("span"); m.className = "meta"; m.textContent = r.language || "Ver no GitHub";
+          a.appendChild(h); a.appendChild(p); a.appendChild(m); box.appendChild(a);
+        });
+      })
+      .catch(function () { note("Não foi possível carregar os projetos agora. Veja meus repositórios direto no GitHub."); });
+  })();
+</script>
+</body>
+</html>
